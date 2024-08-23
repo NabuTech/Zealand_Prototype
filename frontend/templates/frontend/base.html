@@ -1,0 +1,165 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Zealand Immigration Services{% endblock %}</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome for Social Media Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'frontend/css/styles.css' %}">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Sticky Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'frontend/images/logo.png' %}" alt="Zealand Immigration Logo" class="d-inline-block align-top" style="max-height: 40px; max-width: 100px;">
+            </a>
+            <!-- Schedule Now Button (Always Visible) -->
+            <a href="#" class="btn btn-primary order-lg-2 ms-auto me-2" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Schedule Now</a>
+            <!-- Burger Icon -->
+            <button class="navbar-toggler order-lg-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
+                <!-- Links for All Screens -->
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <!-- Second Navbar Links for Mobile View -->
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#individuals">Individuals</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#employers">Employers</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#complex-cases">Complex Cases</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#schools">Schools and Universities</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#passports-support">Passports Support</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#news">News and Updates</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#support">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Second Navigation Bar (Sticky, Hidden in Mobile) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top d-none d-lg-block">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#individuals">Individuals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#employers">Employers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#complex-cases">Complex Cases</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#schools">Schools and Universities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#passports-support">Passports Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#news">News and Updates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#support">Support</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        {% block content %}
+        <!-- Default content goes here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <!-- Logo -->
+                    <img src="{% static 'frontend/images/logo.png' %}" alt="Zealand Immigration Logo" class="mb-3" style="max-height: 40px; max-width: 150px;">
+                    <!-- Blurb -->
+                    <p class="mb-3">Zealand Immigration Services is dedicated to assisting individuals and businesses in navigating the complexities of immigration processes.</p>
+                    <!-- Links Inline -->
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-light">Contact Us</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light">FAQ</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light">Cookie Preferences</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <!-- Right Column -->
+                <div class="col-lg-6">
+                    <!-- Subscribe Header -->
+                    <h5 class="mb-3">Subscribe</h5>
+                    <!-- Subscribe Blurb -->
+                    <p class="mb-3">Stay updated with the latest news and updates from Zealand Immigration Services.</p>
+                    <!-- Email Input and Button -->
+                    <form class="mb-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+                            <button class="btn btn-primary" type="submit">Submit Now</button>
+                        </div>
+                    </form>
+                    <!-- Additional Links Inline -->
+                    <ul class="list-inline mb-4">
+                        <li class="list-inline-item"><a href="#" class="text-light">Local Language Information</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light">Accessibility Statement</a></li>
+                    </ul>
+                    <!-- Social Media Icons -->
+                    <div>
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright Statement -->
+            <div class="text-center mt-4">
+                <p class="mb-0">&copy; 2024 Zealand Immigration Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (via CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
