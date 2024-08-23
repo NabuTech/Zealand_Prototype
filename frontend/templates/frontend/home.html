@@ -213,26 +213,24 @@
                 <h2>Recent Blogs</h2>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <h2>Recent Blogs</h2>
+            </div>
+        </div>
         <div class="row">
-            <!-- Placeholder for Future Blog Posts (to be editable via CMS) -->
+            {% for post in latest_posts %}
             <div class="col-md-4 mb-4">
-                <a href="#">
-                    <img src="https://via.placeholder.com/150" alt="Blog Post 1" class="img-fluid">
-                    <h5>Understanding the New Work Visa Policies</h5>
+                <a href="{% url 'post_detail' post.id %}">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
+                    {% else %}
+                    <img src="https://via.placeholder.com/150" alt="{{ post.title }}" class="img-fluid">
+                    {% endif %}
+                    <h5>{{ post.title }}</h5>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <img src="https://via.placeholder.com/150" alt="Blog Post 2" class="img-fluid">
-                    <h5>How to Prepare for Your Resident Visa Application</h5>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <img src="https://via.placeholder.com/150" alt="Blog Post 3" class="img-fluid">
-                    <h5>Top Tips for International Students</h5>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

@@ -1,0 +1,14 @@
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+<h2>All Posts</h2>
+<ul>
+    {% for post in posts %}
+    <li>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.snapshot }}</p>
+        <a href="{% url 'edit_post' post.id %}">Edit</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

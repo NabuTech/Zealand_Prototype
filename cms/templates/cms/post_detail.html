@@ -1,0 +1,7 @@
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.snapshot }}</p>
+<div>{{ post.detail|safe }}</div> <!-- Use the `safe` filter here -->
+{% endblock %}
