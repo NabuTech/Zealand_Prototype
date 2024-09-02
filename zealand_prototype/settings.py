@@ -38,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'frontend',
-    'authentication',
-    'cms',
-    'tinymce',
+    'base',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +129,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'base.CustomUser'
